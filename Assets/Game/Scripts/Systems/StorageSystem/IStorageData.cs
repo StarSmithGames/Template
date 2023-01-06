@@ -108,8 +108,6 @@ namespace Game.Managers.StorageManager
 
 		public Profile(string json)
 		{
-			Assert.IsTrue(!json.IsEmpty());
-
 			data = JsonSerializator.ConvertFromUnityJson<Data>(json);
 		}
 
