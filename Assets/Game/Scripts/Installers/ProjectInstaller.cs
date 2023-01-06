@@ -1,3 +1,6 @@
+using Game.Managers.AsyncManager;
+using Game.Systems.ApplicationHandler;
+
 using Zenject;
 
 namespace Game.Installers
@@ -6,7 +9,10 @@ namespace Game.Installers
 	{
 		public override void InstallBindings()
 		{
+			Container.BindInterfacesAndSelfTo<AsyncManager>().AsSingle();
 
+			SignalBusInstaller.Install(Container);
+			ApplicationHandlerInstaller.Install(Container);
 		}
 	}
 }
